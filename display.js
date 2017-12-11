@@ -180,7 +180,7 @@ EstyJs.Display = function (opts) {
 
 
                 }
-                pixelIndex += 640;
+                //pixelIndex += 640;
                 break;
             case 1:
                 //med res
@@ -241,7 +241,7 @@ EstyJs.Display = function (opts) {
 
 
                 }
-                pixelIndex += 640;
+                //pixelIndex += 640;
                 break;
             case 2:
                 //high res
@@ -489,7 +489,7 @@ EstyJs.Display = function (opts) {
 
 
                 }
-                pixelIndex += 2560;
+                //pixelIndex += 2560;
                 break;
             case 1:
                 //med res
@@ -596,7 +596,7 @@ EstyJs.Display = function (opts) {
 
 
                 }
-                pixelIndex += 2560;
+                //pixelIndex += 2560;
                 break;
             case 2:
                 //high res
@@ -765,9 +765,11 @@ EstyJs.Display = function (opts) {
         if (screenRowStart < 0xfffff && (flipFlop)) {
             if (buf8 != null) {
                 optimisedScreenDraw();
+                optimisedScreenDraw(); // 2 times when scanlines are disabled
             }
             else {
                 standardScreenDraw();
+                standardScreenDraw(); // 2 times when scanlines are disabled
             }
         }
 
